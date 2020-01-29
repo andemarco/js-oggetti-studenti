@@ -1,19 +1,20 @@
 // ESERCIZIO 1
 // Creare un oggetto che descriva uno studente con le seguenti proprietà: nome, cognome e età. Stampare a schermo attraverso il for in tutte le proprietà.
 var studente = {
-  'nome' : 'Andrea',
-  'cognome' : 'De Marco',
-  'eta' : 28,
-  'sesso' : 'm',
-  'livello' : 'beginner'
+  'Nome' : 'Andrea',
+  'Cognome' : 'De Marco',
+  'Eta' : 28,
+  'Sesso' : 'm',
+  'Livello' : 'beginner'
 }
 
 console.log('Esercizio 1', studente);
 
 for (var key in studente) {
-  proprieta = (studente[key]);
+  var proprieta = key + ':' + studente[key] + ', ';
+  console.log(proprieta);
+  $('.es1 .student').append(proprieta)
 }
-
 // ESERCIZIO 2
 // Creare un array di oggetti di studenti. Ciclare su tutti gli studenti e stampare per ognuno nome e cognome.
 
@@ -45,11 +46,12 @@ for (var i = 0; i < studenti.length; i++) {
   var alunno = studenti[i]
   console.log('Esercizio 2', alunno);
   console.log(alunno.nome + ' ' + alunno.cognome);
+  $('.es2 .student').append(alunno.nome + ' ' + alunno.cognome + ', ')
 }
 
 // ESERCIZIO 3
 // Dare la possibilità all’utente attraverso 3 prompt di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
-
+//
 var iscritto = {
   'nome' : prompt('inserisci il tuo nome'),
   'cognome' : prompt('inserisci il tuo Cognome'),
@@ -58,3 +60,8 @@ var iscritto = {
 studenti.push(iscritto)
 
 console.log('Esercizio 3', studenti);
+
+for (var i = 0; i < studenti.length; i++) {
+  var alunno = studenti[i]
+  $('.es3 .student').append(studenti[i].nome + ' ' + studenti[i].cognome + ' ' + studenti[i].eta + ', ')
+}
